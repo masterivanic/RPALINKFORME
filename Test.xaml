@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Test" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="995,1338" sap2010:WorkflowViewState.IdRef="Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Test" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1131,1000.5" sap2010:WorkflowViewState.IdRef="Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -42,6 +42,15 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
       <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail.Activities.Business</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -102,106 +111,61 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
       <AssemblyReference>System.Private.Xml</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="592,1273" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="512,935.5" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: (3) dev Jobs | LinkedIn" sap:VirtualizedContainerService.HintSize="530,1185" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="797918d2-a874-46ba-8b29-a9b279c6cb75" Version="V2">
-      <uix:NApplicationCard.Body>
-        <ActivityAction x:TypeArguments="x:Object">
+    <umab:OutlookApplicationCard Account="philippe-ivan.mbarga@estiam.com" AccountMismatchBehavior="UseDefaultEmailAccount" DisplayName="Use Desktop Outlook App" sap:VirtualizedContainerService.HintSize="450,847.5" sap2010:WorkflowViewState.IdRef="OutlookApplicationCard_3">
+      <umab:OutlookApplicationCard.Body>
+        <ActivityAction x:TypeArguments="um:IMailQuickHandle">
           <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Outlook" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,944" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="strJob" />
-              <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
-              <Variable x:TypeArguments="x:String" Name="selectName" />
-              <Variable x:TypeArguments="x:String" Name="job">
-                <Variable.Default>
-                  <Literal x:TypeArguments="x:String">"Associate"</Literal>
-                </Variable.Default>
-              </Variable>
-              <Variable x:TypeArguments="x:String" Default="Internship" Name="jobTitle" />
-              <Variable x:TypeArguments="x:String" Name="jobT">
-                <Variable.Default>
-                  <Literal x:TypeArguments="x:String">Director</Literal>
-                </Variable.Default>
-              </Variable>
-              <Variable x:TypeArguments="x:String" Name="jobToDo">
-                <Variable.Default>
-                  <Literal x:TypeArguments="x:String">Associate</Literal>
-                </Variable.Default>
-              </Variable>
-            </Sequence.Variables>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,640.5" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_1">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[job]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">Associate</InArgument>
-              </Assign.Value>
-            </Assign>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Experience level'" sap:VirtualizedContainerService.HintSize="434,227" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="797918d2-a874-46ba-8b29-a9b279c6cb75" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4044920895&amp;f_AL=true&amp;geoId=105015875&amp;keywords=dev&amp;origin=JOB_SEARCH_PAGE_JOB_FILTER&amp;refresh=true" CVScreenId="669418d3-9b47-42ea-879b-9e3d74acc894" CvElementArea="737, 244, 164, 36" CvType="InputBox" DesignTimeRectangle="740, 246, 160, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='searchFilter_experience' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='searchFilter_experience' tag='BUTTON' type='button' class='artdeco-pill artdeco-pill--slate artdeco-pill--choice artdeco-pill--2 search-reusables__filter-pill-button&amp;#xA;       reusable-search-filter-trigger-and-dropdown__trigger' aaname='                  Experience level                                   ' check:innerText='Experience level' /&gt;" Guid="ba388ae9-e9fd-4aa1-b188-fa0398381c72" InformativeScreenshot="fba0ef9c621a1da0e3fee0090e8fe07d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(4) dev Jobs | LinkedIn' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
-              </uix:NClick.Target>
-              <uix:NClick.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionOptions.Retry>
-                  <uix:VerifyExecutionOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionOptions.Timeout>
-                </uix:VerifyExecutionOptions>
-              </uix:NClick.VerifyOptions>
-            </uix:NClick>
-            <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_2">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[job]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">Director</InArgument>
-              </Assign.Value>
-            </Assign>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click " sap:VirtualizedContainerService.HintSize="434,227" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="797918d2-a874-46ba-8b29-a9b279c6cb75" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4047710538&amp;f_AL=true&amp;geoId=104246759&amp;keywords=RPA%20Developer&amp;origin=JOB_SEARCH_PAGE_JOB_FILTER&amp;refresh=true" CVScreenId="2063c7eb-9e22-4e5d-b8a8-50f54dc17fd6" CvElementArea="677, 304, 28, 28" CvTextArea="710, 311, 63, 16" CvTextArgument="Internship" CvType="CheckBox" DesignTimeRectangle="711, 396, 58, 20" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl parentid='artdeco-hoverable-artdeco-gen-56' tag='SPAN' aaname='* {0}*' /&gt;&quot;, job)]" FuzzySelectorArgument="&lt;webctrl parentid='artdeco-hoverable-artdeco-gen-56' tag='SPAN' aaname='                   Associate                 ' type='' class='t-14 t-black--light t-normal' check:text='Associate' /&gt;" Guid="21fa13ec-834e-4dad-bc3b-41e843370fcb" InformativeScreenshot="e43dd00896e9e521883de4a5baf1ae74.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(2) dev Jobs | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                      <uix:Target CVScreenId="2063c7eb-9e22-4e5d-b8a8-50f54dc17fd6" CvTextArea="710, 311, 63, 16" CvTextArgument="Internship" CvType="Text" DesignTimeRectangle="711, 308, 62, 20" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl parentid='artdeco-hoverable-artdeco-gen-56' tag='SPAN' aaname='                   {0}                 ' class='t-14 t-black--light t-normal' /&gt;&quot;, jobToDo)]" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl parentid='artdeco-hoverable-artdeco-gen-56' tag='SPAN' aaname='                   {0}                 ' class='t-14 t-black--light t-normal' type='' check:text='Internship' /&gt;&quot;, jobToDo)]" Guid="1e9d8f4a-f49b-4ec5-a8cf-59bc8fc7f226" SearchSteps="FuzzySelector" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NClick.Target>
-              <uix:NClick.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionOptions.Retry>
-                  <uix:VerifyExecutionOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionOptions.Timeout>
-                </uix:VerifyExecutionOptions>
-              </uix:NClick.VerifyOptions>
-            </uix:NClick>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,170" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[selectName]" />
+            <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;Message test&lt;/SPAN&gt;&lt;/P&gt;&quot;)]" ConnectionId="9452ec4b-e14e-4cc1-bef5-30f47f6ffce5" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="354,552.5" sap2010:WorkflowViewState.IdRef="SendMailConnections_3" Importance="Normal" InputType="HTML" SaveAsDraft="True" Subject="Test email" To="[New String(){&quot;arthur.deumeni-tsako@estiam.com&quot;}]" UseConnectionService="True" UseSharedMailbox="False">
+              <umam:SendMailConnections.AttachmentsBackup>
+                <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
+                  <usau:BackupSlot.BackupValues>
+                    <scg:Dictionary x:TypeArguments="umame:AttachmentInputMode, scg:List(x:Object)" />
+                  </usau:BackupSlot.BackupValues>
+                </usau:BackupSlot>
+              </umam:SendMailConnections.AttachmentsBackup>
+              <umam:SendMailConnections.InputTypeBackup>
+                <usau:BackupSlot x:TypeArguments="umame:BodyInputType" StoredValue="HTML">
+                  <usau:BackupSlot.BackupValues>
+                    <scg:Dictionary x:TypeArguments="umame:BodyInputType, scg:List(x:Object)" />
+                  </usau:BackupSlot.BackupValues>
+                </usau:BackupSlot>
+              </umam:SendMailConnections.InputTypeBackup>
+              <umam:SendMailConnections.MailboxBackup>
+                <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" StoredValue="NoMailbox">
+                  <usau:BackupSlot.BackupValues>
+                    <scg:Dictionary x:TypeArguments="umame:MailboxSelectionMode, scg:List(x:Object)" />
+                  </usau:BackupSlot.BackupValues>
+                </usau:BackupSlot>
+              </umam:SendMailConnections.MailboxBackup>
+            </umam:SendMailConnections>
           </Sequence>
         </ActivityAction>
-      </uix:NApplicationCard.Body>
-      <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="2872, -8, 1936, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAALiSURBVFhH7VfNaxNBFN/UGJMUvdSi0Kog1YvgwYtHwZPnFj0oCFbT5GCUVmwFxYKotQdvKqJ/QRUUNRTEotmVpk1bY1H8uNh8WGtpU6utkkQ3ec5vshO3aTcNslty6IMfmX3zPn4zbzLDkypCXB4ZqHJ7lFp3i1JvMWrcPsXm9ipacm9QcpzstblalCY2GWH4bDHCDE1r/M9sTl9QktgHUKNN0AoBC8VuFwhga8CuYOTyKLTuhMyBsX7OBCAXci5NAAm3tIXo0M13HNvODJhNwpgAEm1lCXvCU/Qrk2VQqWdoihEylYQxAWz5Qbbqn2mVhGAMHeZgYwIqmEC+/qIEKi8DSoCyrEgJACTCwcOqARzIcpKzu4TblWFbmgBgPy5T1bEgx1o2RnDoUQZ8C4iE0K/3vaRNp/qp1t9fsNXH1MGYAIIhyLn7Y3Q1EOfAGDoEPHD9DXUFEnTlSZw6H8Zo94Vh2nw6RIdvv6e7wQl6+naGAqNJusb89l56RdWLk5cm4GQEdnSEafxbWjuCxMfQ2ZuDPLGQ+ZRKFx9E6VFkmp8XveQYotMpOnrnA1V7LSLwW83R5I8M5ZDNQOLJFO3rek3OheUwh4AQNZujxEyaIrH5PCFNL+TW8y+0gZ0PxNdgHoHMnyzd6BunPZ0jVN86QPu7R2lobE6bzctIdK74JjWPQPDjLNW1hsjBthgJ8M84wg4k7g8h8WSaGtoHeWzk0HKZQ6C7N7Hg7+b0yLTr/DB9/Z7RLP75W0Lg8uMYXzV8hX9D+9L+K0bAyH+VwCqBsglsPzvIL4+J2TQHxtDZm2XquPeJ33YIil98O4oIGPmXRQDAswoHsAYwhg5PMl6+nZoev3glxVO9nL/OpjQBAGz1EHrcdnp9cXIBvQ1QNL+IAJoENAvFhlYBTRCaIUlCe2T397HWTG7UJsDOSrCFyo32thc2l0/O94dMAbDmVAYrbM3/om5ZeOSNaITREFeASNJf503cP1oKQCkAAAAASUVORK5CYII=" InformativeScreenshot="c63d56f8e920e66397411737ae7776bf.jpg" Selector="&lt;html app='chrome.exe' title='*Jobs | LinkedIn*' /&gt;" Title="(3) dev Jobs | LinkedIn" Url="https://www.linkedin.com/jobs/search/?currentJobId=4044920895&amp;f_AL=true&amp;geoId=105015875&amp;keywords=dev&amp;origin=JOB_SEARCH_PAGE_JOB_FILTER&amp;refresh=true" />
-      </uix:NApplicationCard.TargetApp>
-    </uix:NApplicationCard>
+      </umab:OutlookApplicationCard.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </umab:OutlookApplicationCard>
   </Sequence>
 </Activity>
