@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Test" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1131,1000.5" sap2010:WorkflowViewState.IdRef="Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Test" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1052,1063.5" sap2010:WorkflowViewState.IdRef="Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -116,29 +116,34 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="512,935.5" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="512,998.5" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <umab:OutlookApplicationCard Account="philippe-ivan.mbarga@estiam.com" AccountMismatchBehavior="UseDefaultEmailAccount" DisplayName="Use Desktop Outlook App" sap:VirtualizedContainerService.HintSize="450,847.5" sap2010:WorkflowViewState.IdRef="OutlookApplicationCard_3">
+    <umab:OutlookApplicationCard Account="philippe-ivan.mbarga@estiam.com" AccountMismatchBehavior="UseDefaultEmailAccount" DisplayName="Use Desktop Outlook App" sap:VirtualizedContainerService.HintSize="450,910.5" sap2010:WorkflowViewState.IdRef="OutlookApplicationCard_4">
       <umab:OutlookApplicationCard.Body>
         <ActivityAction x:TypeArguments="um:IMailQuickHandle">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Outlook" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,640.5" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,703.5" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;Message test&lt;/SPAN&gt;&lt;/P&gt;&quot;)]" ConnectionId="9452ec4b-e14e-4cc1-bef5-30f47f6ffce5" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="354,552.5" sap2010:WorkflowViewState.IdRef="SendMailConnections_3" Importance="Normal" InputType="HTML" SaveAsDraft="True" Subject="Test email" To="[New String(){&quot;arthur.deumeni-tsako@estiam.com&quot;}]" UseConnectionService="True" UseSharedMailbox="False">
+            <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Builder" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;J&amp;#39;esp&amp;#232;re que tu vas bien ! &amp;#128522;&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;En faisant un tour sur LinkedIn, je suis tomb&amp;#233;(e) sur plusieurs offres d&amp;#39;emploi qui semblent parfaitement&#xD;&#xA;            correspondre &amp;#224; ta recherche et &amp;#224; ton profil. C&amp;#39;est exactement ce que tu cherchais, non ? &lt;/SPAN&gt;&lt;SPAN&gt;&amp;#128064;&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Je te mets en pi&amp;#232;ce jointes les liens pour que tu puisses y jeter un coup d&amp;#39;œil :&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Qu&amp;#39;est-ce que tu attends pour foncer et postuler ? &lt;/SPAN&gt;&lt;SPAN&gt;&amp;#128640;&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Je suis s&amp;#251;r(e) que tu As toutes les cartes en main pour te d&amp;#233;marquer ! &lt;/SPAN&gt;&lt;SPAN&gt;&amp;#128521;&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Si tu As besoin d&amp;#39;un coup de pouce pour ta candidature ou de conseils, n&amp;#39;h&amp;#233;site surtout pas, je suis l&amp;#224; pour&#xD;&#xA;            t&amp;#39;aider. &amp;#128077;&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Bonne chance et tiens-moi au courant !&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;&amp;#192; tr&amp;#232;s vite,&lt;/SPAN&gt;&lt;BR/&gt;&lt;/P&gt;&quot;)]" ConnectionId="cb753783-1eda-4606-b3e9-2e4163f068c7" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="354,615.5" sap2010:WorkflowViewState.IdRef="SendMailConnections_4" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="Des pépites LinkedIn à ne pas manquer ! 😎💼 " To="[New String(){&quot;philippe-ivan.mbarga@estiam.com&quot;,&quot;imrane.lawani@estiam.com&quot;,&quot;japhet.ntantu@estiam.com&quot;,&quot;franck-vaneck.ndandji-tchetnga@estiam.com&quot;}]" UseConnectionService="True" UseSharedMailbox="False">
+              <umam:SendMailConnections.AttachmentList>
+                <scg:List x:TypeArguments="InArgument(upr:IResource)" Capacity="0" />
+              </umam:SendMailConnections.AttachmentList>
               <umam:SendMailConnections.AttachmentsBackup>
-                <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
+                <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Builder">
                   <usau:BackupSlot.BackupValues>
-                    <scg:Dictionary x:TypeArguments="umame:AttachmentInputMode, scg:List(x:Object)" />
+                    <scg:List x:TypeArguments="x:Object" x:Key="Existing" Capacity="1">
+                      <x:Null />
+                    </scg:List>
                   </usau:BackupSlot.BackupValues>
                 </usau:BackupSlot>
               </umam:SendMailConnections.AttachmentsBackup>
@@ -152,7 +157,12 @@
               <umam:SendMailConnections.MailboxBackup>
                 <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" StoredValue="NoMailbox">
                   <usau:BackupSlot.BackupValues>
-                    <scg:Dictionary x:TypeArguments="umame:MailboxSelectionMode, scg:List(x:Object)" />
+                    <scg:List x:TypeArguments="x:Object" x:Key="NoMailbox" Capacity="1">
+                      <x:Null />
+                    </scg:List>
+                    <scg:List x:TypeArguments="x:Object" x:Key="UseMailbox" Capacity="1">
+                      <x:Null />
+                    </scg:List>
                   </usau:BackupSlot.BackupValues>
                 </usau:BackupSlot>
               </umam:SendMailConnections.MailboxBackup>

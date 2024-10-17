@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1550,6516.5" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1052,2926" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -59,6 +59,8 @@
       <x:String>Microsoft.Graph</x:String>
       <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
       <x:String>UiPath.MicrosoftOffice365.Activities.Excel</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -136,7 +138,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1560,6451.5" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="770,2861" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="isLogin" />
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
@@ -146,27 +148,28 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Login - Invoke Workflow File (Login.xaml)" sap:VirtualizedContainerService.HintSize="1498,207" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Login.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Login - Invoke Workflow File (Login.xaml)" sap:VirtualizedContainerService.HintSize="708,207" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Login.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="is_Login">[isLogin]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Sequence DisplayName="Find JOB" sap:VirtualizedContainerService.HintSize="1498,6156.5" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Find JOB" sap:VirtualizedContainerService.HintSize="708,2566" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="filePath" />
         <Variable x:TypeArguments="sd:DataTable" Name="dtJOBS" />
+        <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="queueItems" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="1436,115" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign sap:VirtualizedContainerService.HintSize="646,115" sap2010:WorkflowViewState.IdRef="Assign_2">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[filePath]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String">C:\Users\maste\Documents\rpachallenge\linkforme.xlsx</InArgument>
+          <InArgument x:TypeArguments="x:String">C:\Users\maste\Documents\rpachallenge\linkforme1.xlsx</InArgument>
         </Assign.Value>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -175,52 +178,30 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="1436,825" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
-        <ueab:ExcelProcessScopeX.Body>
-          <ActivityAction x:TypeArguments="ui:IExcelProcess">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
-            </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="602,706" sap2010:WorkflowViewState.IdRef="Sequence_17">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="540,618" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="C:\Users\maste\Documents\rpachallenge\Copie de linkforme.xlsx">
-                <ueab:ExcelApplicationCard.Body>
-                  <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
-                    </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="506,282" sap2010:WorkflowViewState.IdRef="Sequence_18">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="444,194" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;Sheet&quot;)]" SaveTo="[dtJOBS]" />
-                    </Sequence>
-                  </ActivityAction>
-                </ueab:ExcelApplicationCard.Body>
-              </ueab:ExcelApplicationCard>
-            </Sequence>
-          </ActivityAction>
-        </ueab:ExcelProcessScopeX.Body>
-      </ueab:ExcelProcessScopeX>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="*" sap:VirtualizedContainerService.HintSize="1436,5105.5" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="7f27cbcb-0fce-4902-8813-ed4296347553" Version="V2" WindowResize="Maximize">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Feed queue for jobs posting" DisplayName="Dispacther" sap:VirtualizedContainerService.HintSize="646,238" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Dispacther.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_File">[filePath]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+      <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="Shared/LINKFORME_ROBOT" sap:VirtualizedContainerService.HintSize="646,176" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="New" QueueName="File_JOB_LINKIN" Result="[queueItems]" />
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="*" sap:VirtualizedContainerService.HintSize="646,1926" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="7f27cbcb-0fce-4902-8813-ed4296347553" Version="V2" WindowResize="Maximize">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1402,4864.5" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="612,1685" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Jobs'" sap:VirtualizedContainerService.HintSize="1340,227" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Version="V3">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Jobs'" sap:VirtualizedContainerService.HintSize="550,227" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Version="V3">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/feed/" CVScreenId="d273a949-df52-4e80-b9d6-95d6bc601347" CvTextArea="1011, 161, 26, 12" CvTextArgument="Jobs" CvType="Text" DesignTimeRectangle="985, 129, 80, 52" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='                                                                                                      Jobs            ' parentid='global-nav' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='                                                                                                      Jobs            ' parentid='global-nav' tag='A' type='' class='app-aware-link  &amp;#xA;         global-nav__primary-link' check:innerText='Jobs' /&gt;" Guid="8294d63f-60d1-4e67-a445-c6971fa13ef0" InformativeScreenshot="c517bee66121b7c172864d1e0a3138ef.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(2) Feed | LinkedIn' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                 </uix:NClick.Target>
@@ -235,81 +216,74 @@
                   </uix:VerifyExecutionOptions>
                 </uix:NClick.VerifyOptions>
               </uix:NClick>
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtJOBS]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1340,4547.5" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
-                <ui:ForEachRow.Body>
-                  <ActivityAction x:TypeArguments="sd:DataRow">
+              <ui:ForEach x:TypeArguments="ui:QueueItem" CurrentIndex="{x:Null}" DisplayName="For Each currentQueueItem" sap:VirtualizedContainerService.HintSize="550,1368" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[queueItems]">
+                <ui:ForEach.Body>
+                  <ActivityAction x:TypeArguments="ui:QueueItem">
                     <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                      <DelegateInArgument x:TypeArguments="ui:QueueItem" Name="currentQueueItem" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1306,4356.5" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="516,1228" sap2010:WorkflowViewState.IdRef="Sequence_23">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Search by'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1244,288" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Text="[CurrentRow(&quot;mot clé&quot;).ToString]" Version="V3">
-                        <uix:NTypeInto.Target>
-                          <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/" CVScreenId="eff1418b-497f-4de4-b959-d6472104dfc4" CvElementArea="443, 138, 188, 36" CvTextArea="471, 150, 136, 16" CvTextArgument="Title, skill or company" CvType="Button" DesignTimeRectangle="445, 193, 185, 32" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='jobs-search-box-keyword-id-ember2510' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='jobs-search-box-keyword-id-ember2510' tag='INPUT' type='text' class='jobs-search-box__text-input jobs-search-box__keyboard-text-input jobs-search-global-typeahead__input' aaname='                                Search by title, skill, or company                                                                                  ' /&gt;" Guid="1aec82b1-d091-4680-8e88-17fe7cd8989f" ImageBase64="" InformativeScreenshot="3c4da1fb422a619935ea6a8b898bc792.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(2) Jobs | LinkedIn' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
-                            <uix:TargetAnchorable.Anchors>
-                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                <uix:Target CVScreenId="eff1418b-497f-4de4-b959-d6472104dfc4" CvElementArea="443, 138, 188, 36" CvType="Button" DesignTimeRectangle="445, 193, 28, 32" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='jobs-search-box__input-icon jobs-search-box__keywords-label' aaname='                                                            ' check:innerText='Search by title, skill, or company' /&gt;" Guid="e7276c21-0d34-4e46-9dc7-050a2f518a56" SearchSteps="FuzzySelector, CV" />
-                              </scg:List>
-                            </uix:TargetAnchorable.Anchors>
-                          </uix:TargetAnchorable>
-                        </uix:NTypeInto.Target>
-                        <uix:NTypeInto.VerifyOptions>
-                          <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                            <uix:VerifyExecutionTypeIntoOptions.Retry>
-                              <InArgument x:TypeArguments="x:Boolean" />
-                            </uix:VerifyExecutionTypeIntoOptions.Retry>
-                            <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                              <InArgument x:TypeArguments="x:Double" />
-                            </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                          </uix:VerifyExecutionTypeIntoOptions>
-                        </uix:NTypeInto.VerifyOptions>
-                      </uix:NTypeInto>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'City, state, or zip code'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1244,251" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Text="[CurrentRow(&quot;region&quot;).ToString + &quot;[k(Enter)]&quot;]" Version="V3">
-                        <uix:NTypeInto.Target>
-                          <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4047783391&amp;geoId=104246759&amp;keywords=RPA%20Developer&amp;origin=JOBS_HOME_SEARCH_BUTTON&amp;refresh=true" CVScreenId="a6fe9adb-a0ea-4495-8fb5-839a36beb1b1" CvElementArea="642, 188, 194, 37" CvTextArea="671, 199, 131, 15" CvTextArgument="Ile-de-France, France" CvType="Button" DesignTimeRectangle="644, 191, 191, 32" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='*' tag='INPUT' aaname='                                City, state, or zip code                                                         ' /&gt;" FuzzySelectorArgument="&lt;webctrl id='*' tag='INPUT' aaname='                                City, state, or zip code                                                         ' type='text' class='jobs-search-box__text-input jobs-search-box__text-input--with-clear' /&gt;" Guid="426142cb-aa54-4935-8b4d-8ced039f4b86" InformativeScreenshot="86f79baadbcaa7d70a7d08e026f6e0ed.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='* | LinkedIn' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
-                            <uix:TargetAnchorable.Anchors>
-                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                <uix:Target CVScreenId="a6fe9adb-a0ea-4495-8fb5-839a36beb1b1" CvElementArea="642, 188, 194, 37" CvType="Button" DesignTimeRectangle="644, 191, 28, 32" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='location-typeahead-instance-ember661' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='location-typeahead-instance-ember661' tag='LABEL' type='' class='jobs-search-box__input-icon' aaname='                                              ' check:innerText='City, state, or zip code' /&gt;" Guid="68126cfd-6abc-4858-8b3e-3ff7a11b37a7" SearchSteps="FuzzySelector, CV" />
-                              </scg:List>
-                            </uix:TargetAnchorable.Anchors>
-                          </uix:TargetAnchorable>
-                        </uix:NTypeInto.Target>
-                      </uix:NTypeInto>
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Easy Apply'" sap:VirtualizedContainerService.HintSize="1244,227" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Version="V3">
-                        <uix:NClick.Target>
-                          <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4044920895&amp;geoId=105015875&amp;keywords=dev&amp;origin=JOBS_HOME_SEARCH_BUTTON&amp;refresh=true" CVScreenId="734bb597-34fc-4947-8278-2529c931bddb" CvElementArea="1024, 192, 109, 36" CvTextArea="1038, 202, 80, 19" CvTextArgument="Easy Apply" CvType="Button" DesignTimeRectangle="1026, 194, 103, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='ember3141' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ember3141' tag='BUTTON' type='button' class='artdeco-pill artdeco-pill--slate artdeco-pill--2 artdeco-pill--choice ember-view search-reusables__filter-pill-button' aaname='           Easy Apply        ' check:innerText='Easy Apply' /&gt;" Guid="2d7d3fa2-995b-48e4-9753-2647865a1b44" InformativeScreenshot="dc3f121b8dffe3f05197a8a60c6afd2c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(2) dev Jobs | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
-                        </uix:NClick.Target>
-                        <uix:NClick.VerifyOptions>
-                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                            <uix:VerifyExecutionOptions.Retry>
-                              <InArgument x:TypeArguments="x:Boolean" />
-                            </uix:VerifyExecutionOptions.Retry>
-                            <uix:VerifyExecutionOptions.Timeout>
-                              <InArgument x:TypeArguments="x:Double" />
-                            </uix:VerifyExecutionOptions.Timeout>
-                          </uix:VerifyExecutionOptions>
-                        </uix:NClick.VerifyOptions>
-                      </uix:NClick>
-                      <uix:NCheckState DisplayName="Check App State 'Easy Apply'" sap:VirtualizedContainerService.HintSize="1244,3502.5" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Version="V3">
-                        <uix:NCheckState.IfExists>
-                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="670,3260.5" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                            <Sequence.Variables>
-                              <Variable x:TypeArguments="x:String" Name="strJob" />
-                              <Variable x:TypeArguments="sd:DataTable" Name="dtJobList" />
-                            </Sequence.Variables>
+                      <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Transaction Item" FolderPath="Shared/LINKFORME_ROBOT" sap:VirtualizedContainerService.HintSize="454,176" sap2010:WorkflowViewState.IdRef="GetQueueItem_1" QueueType="File_JOB_LINKIN" TransactionItem="[currentQueueItem]" />
+                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="454,964" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                        <TryCatch.Try>
+                          <Sequence sap:VirtualizedContainerService.HintSize="416,307" sap2010:WorkflowViewState.IdRef="Sequence_42">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="608,177" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;filters apply&quot;]" />
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Experience level'" sap:VirtualizedContainerService.HintSize="608,227" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Version="V3">
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Search by'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Text="[currentQueueItem.SpecificContent(&quot;mot clé&quot;).ToString]" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/" CVScreenId="eff1418b-497f-4de4-b959-d6472104dfc4" CvElementArea="443, 138, 188, 36" CvTextArea="471, 150, 136, 16" CvTextArgument="Title, skill or company" CvType="Button" DesignTimeRectangle="445, 193, 185, 32" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='jobs-search-box-keyword-id-ember2510' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='jobs-search-box-keyword-id-ember2510' tag='INPUT' type='text' class='jobs-search-box__text-input jobs-search-box__keyboard-text-input jobs-search-global-typeahead__input' aaname='                                Search by title, skill, or company                                                                                  ' /&gt;" Guid="1aec82b1-d091-4680-8e88-17fe7cd8989f" ImageBase64="" InformativeScreenshot="3c4da1fb422a619935ea6a8b898bc792.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(2) Jobs | LinkedIn' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CVScreenId="eff1418b-497f-4de4-b959-d6472104dfc4" CvElementArea="443, 138, 188, 36" CvType="Button" DesignTimeRectangle="445, 193, 28, 32" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='jobs-search-box__input-icon jobs-search-box__keywords-label' aaname='                                                            ' check:innerText='Search by title, skill, or company' /&gt;" Guid="e7276c21-0d34-4e46-9dc7-050a2f518a56" SearchSteps="FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NTypeInto.Target>
+                              <uix:NTypeInto.VerifyOptions>
+                                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                    <InArgument x:TypeArguments="x:Boolean" />
+                                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                    <InArgument x:TypeArguments="x:Double" />
+                                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                </uix:VerifyExecutionTypeIntoOptions>
+                              </uix:NTypeInto.VerifyOptions>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NTypeInto>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'City, state, or zip code'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="NTypeInto_13" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Text="[currentQueueItem.SpecificContent(&quot;region&quot;).ToString + &quot;[k(Enter)]&quot;]" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4047783391&amp;geoId=104246759&amp;keywords=RPA%20Developer&amp;origin=JOBS_HOME_SEARCH_BUTTON&amp;refresh=true" CVScreenId="a6fe9adb-a0ea-4495-8fb5-839a36beb1b1" CvElementArea="642, 188, 194, 37" CvTextArea="671, 199, 131, 15" CvTextArgument="Ile-de-France, France" CvType="Button" DesignTimeRectangle="644, 191, 191, 32" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='*' tag='INPUT' aaname='                                City, state, or zip code                                                         ' /&gt;" FuzzySelectorArgument="&lt;webctrl id='*' tag='INPUT' aaname='                                City, state, or zip code                                                         ' type='text' class='jobs-search-box__text-input jobs-search-box__text-input--with-clear' /&gt;" Guid="426142cb-aa54-4935-8b4d-8ced039f4b86" InformativeScreenshot="86f79baadbcaa7d70a7d08e026f6e0ed.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='* | LinkedIn' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CVScreenId="a6fe9adb-a0ea-4495-8fb5-839a36beb1b1" CvElementArea="642, 188, 194, 37" CvType="Button" DesignTimeRectangle="644, 191, 28, 32" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='location-typeahead-instance-ember661' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='location-typeahead-instance-ember661' tag='LABEL' type='' class='jobs-search-box__input-icon' aaname='                                              ' check:innerText='City, state, or zip code' /&gt;" Guid="68126cfd-6abc-4858-8b3e-3ff7a11b37a7" SearchSteps="FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NTypeInto.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NTypeInto>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Easy Apply'" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="NClick_24" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Version="V3">
                               <uix:NClick.Target>
-                                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4039117240&amp;f_AL=true&amp;geoId=104246759&amp;keywords=Java%20Developer&amp;origin=JOB_SEARCH_PAGE_JOB_FILTER&amp;refresh=true" CVScreenId="3edfcf5d-eace-4840-8aa2-2aea5b44e701" CvElementArea="870, 251, 20, 22" CvTextArea="751, 254, 117, 19" CvTextArgument="Experience level" CvType="ArrowButton" DesignTimeRectangle="740, 246, 160, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='*Experience level*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' aaname='*Experience level*' type='button' class='artdeco-pill artdeco-pill--slate artdeco-pill--choice artdeco-pill--2 search-reusables__filter-pill-button&amp;#xA;       reusable-search-filter-trigger-and-dropdown__trigger' check:text='Experience level' /&gt;" Guid="30f22eed-48d8-4d2c-9f6f-f4e39f3daed2" InformativeScreenshot="dcb91497fbe734540ac8c4b4109fefcf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='* | LinkedIn' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4044920895&amp;geoId=105015875&amp;keywords=dev&amp;origin=JOBS_HOME_SEARCH_BUTTON&amp;refresh=true" CVScreenId="734bb597-34fc-4947-8278-2529c931bddb" CvElementArea="1024, 192, 109, 36" CvTextArea="1038, 202, 80, 19" CvTextArgument="Easy Apply" CvType="Button" DesignTimeRectangle="1026, 194, 103, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='ember3141' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ember3141' tag='BUTTON' type='button' class='artdeco-pill artdeco-pill--slate artdeco-pill--2 artdeco-pill--choice ember-view search-reusables__filter-pill-button' aaname='           Easy Apply        ' check:innerText='Easy Apply' /&gt;" Guid="2d7d3fa2-995b-48e4-9753-2647865a1b44" InformativeScreenshot="dc3f121b8dffe3f05197a8a60c6afd2c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(2) dev Jobs | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
                               </uix:NClick.Target>
                               <uix:NClick.VerifyOptions>
                                 <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
@@ -321,197 +295,63 @@
                                   </uix:VerifyExecutionOptions.Timeout>
                                 </uix:VerifyExecutionOptions>
                               </uix:NClick.VerifyOptions>
-                            </uix:NClick>
-                            <Sequence sap:VirtualizedContainerService.HintSize="608,2766.5" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                              <Sequence.Variables>
-                                <Variable x:TypeArguments="x:String" Name="jobT" />
-                                <Variable x:TypeArguments="sd:DataTable" Name="jobs" />
-                                <Variable x:TypeArguments="x:String" Name="resultPath" />
-                              </Sequence.Variables>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign sap:VirtualizedContainerService.HintSize="546,115" sap2010:WorkflowViewState.IdRef="Assign_4">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:String">[jobT]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String">[CurrentRow("type de candidature").ToString]</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click " sap:VirtualizedContainerService.HintSize="546,227" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Version="V3">
-                                <uix:NClick.Target>
-                                  <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4047908569&amp;distance=25&amp;f_AL=true&amp;geoId=105015875&amp;keywords=dev&amp;origin=JOBS_HOME_KEYWORD_HISTORY&amp;refresh=true" CVScreenId="a3ddc8dd-f459-424b-a3e1-dcc8fc993b7b" CvTextArea="710, 311, 63, 16" CvTextArgument="Internship" CvType="Text" DesignTimeRectangle="711, 396, 58, 20" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl parentid='*' tag='SPAN' aaname='*{0}*' /&gt;&quot;, jobT)]" FuzzySelectorArgument="&lt;webctrl parentid='*' tag='SPAN' aaname='                   Associate                 ' type='' class='t-14 t-black--light t-normal' check:text='Associate' /&gt;" Guid="3d6779c8-d3d7-4e83-bbf6-80a44f1f02d5" InformativeScreenshot="8e085d05805e2a99875cb02e697779ad.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='* | LinkedIn' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
-                                </uix:NClick.Target>
-                                <uix:NClick.VerifyOptions>
-                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                                    <uix:VerifyExecutionOptions.Retry>
-                                      <InArgument x:TypeArguments="x:Boolean" />
-                                    </uix:VerifyExecutionOptions.Retry>
-                                    <uix:VerifyExecutionOptions.Timeout>
-                                      <InArgument x:TypeArguments="x:Double" />
-                                    </uix:VerifyExecutionOptions.Timeout>
-                                  </uix:VerifyExecutionOptions>
-                                </uix:NClick.VerifyOptions>
-                              </uix:NClick>
-                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Show 26 results'" sap:VirtualizedContainerService.HintSize="546,227" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Version="V3">
-                                <uix:NClick.Target>
-                                  <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4039117240&amp;f_AL=true&amp;geoId=104246759&amp;keywords=Java%20Developer&amp;origin=JOB_SEARCH_PAGE_JOB_FILTER&amp;refresh=true" CVScreenId="aeb68bbf-6120-4738-81e7-02e4a8d3ba97" CvElementArea="825, 577, 149, 36" CvTextArea="840, 587, 117, 15" CvTextArgument="Show 26 results" CvType="Button" DesignTimeRectangle="842, 585, 114, 20" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='ember1016' tag='SPAN' aaname='*Show * results* ' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember1016' tag='SPAN' aaname='*Show * results* ' type='' class='artdeco-button__text' check:text='Show 26 results' /&gt;" Guid="79c2c27c-53ab-493a-9d41-938abfa8c296" InformativeScreenshot="937745f9fe22a52f681295a454113d46.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='* | LinkedIn' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
-                                    <uix:TargetAnchorable.Anchors>
-                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                                        <uix:Target CVScreenId="aeb68bbf-6120-4738-81e7-02e4a8d3ba97" CvElementArea="825, 577, 149, 36" CvTextArea="840, 587, 117, 15" CvTextArgument="Show 26 results" CvType="Button" DesignTimeRectangle="826, 579, 146, 32" ElementType="Button" FullSelectorArgument="&lt;webctrl id='ember1016' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ember1016' tag='BUTTON' type='button' class='artdeco-button artdeco-button--2 artdeco-button--primary ember-view ml2' aaname='           Show 26 results                 ' check:innerText='Show 26 results' /&gt;" Guid="0a08db04-1ce1-4ddf-8e46-740d2b9ca389" SearchSteps="FuzzySelector, CV" />
-                                      </scg:List>
-                                    </uix:TargetAnchorable.Anchors>
-                                  </uix:TargetAnchorable>
-                                </uix:NClick.Target>
-                                <uix:NClick.VerifyOptions>
-                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                                    <uix:VerifyExecutionOptions.Retry>
-                                      <InArgument x:TypeArguments="x:Boolean" />
-                                    </uix:VerifyExecutionOptions.Retry>
-                                    <uix:VerifyExecutionOptions.Timeout>
-                                      <InArgument x:TypeArguments="x:Double" />
-                                    </uix:VerifyExecutionOptions.Timeout>
-                                  </uix:VerifyExecutionOptions>
-                                </uix:NClick.VerifyOptions>
-                              </uix:NClick>
-                              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[jobs]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Job title'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Job link'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Company'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='City'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column1' attr2='href'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='strong' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column3' attr='fulltext'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="546,190" sap2010:WorkflowViewState.IdRef="NExtractData_3" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Version="V3">
-                                <uix:NExtractData.NextLink>
-                                  <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4032639501&amp;f_AL=true&amp;f_E=3&amp;geoId=104246759&amp;keywords=RPA%20Developer&amp;origin=JOB_SEARCH_PAGE_JOB_FILTER&amp;refresh=true" CVScreenId="66303376-0673-47d3-b1a3-1eafaf8f21fa" CvElementArea="686, 860, 18, 22" CvTextArea="652, 864, 32, 13" CvTextArgument="Next" CvType="ArrowButton" DesignTimeRectangle="644, 855, 65, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='ember8114' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ember8114' tag='BUTTON' type='button' class='artdeco-button artdeco-button--muted artdeco-button--icon-right artdeco-button--1 artdeco-button--tertiary ember-view jobs-search-pagination__button jobs-search-pagination__button--next' aaname='                           Next ' check:innerText='Next' /&gt;" Guid="c6d60b19-19c5-4ff1-95b7-dba8d7057255" ScopeSelectorArgument="&lt;html app='chrome.exe' title='RPA Developer Jobs | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
-                                    <uix:TargetAnchorable.Anchors>
-                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                        <uix:Target CVScreenId="66303376-0673-47d3-b1a3-1eafaf8f21fa" CvTextArea="652, 864, 32, 13" CvTextArgument="Next" CvType="Text" DesignTimeRectangle="652, 861, 31, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='ember8114' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember8114' tag='SPAN' type='' class='artdeco-button__text' aaname='     Next ' check:innerText='Next' /&gt;" Guid="8dd5a674-b20f-4335-bf69-853ad07dc40e" SearchSteps="FuzzySelector, CV" />
-                                      </scg:List>
-                                    </uix:TargetAnchorable.Anchors>
-                                  </uix:TargetAnchorable>
-                                </uix:NExtractData.NextLink>
-                                <uix:NExtractData.Target>
-                                  <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4032639501&amp;f_AL=true&amp;f_E=3&amp;geoId=104246759&amp;keywords=RPA%20Developer&amp;origin=JOB_SEARCH_PAGE_JOB_FILTER&amp;refresh=true" DesignTimeRectangle="396, 355, 486, 3792" DesignTimeScaleFactor="1" ElementType="List" FullSelectorArgument="&lt;webctrl parentid='main' tag='UL' /&gt;" Guid="d7f5371d-4ef6-4b57-b546-0971354eafdd" InformativeScreenshot="8668c440962bcbd0b58be99e60242473.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='RPA Developer Jobs | LinkedIn' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
-                                </uix:NExtractData.Target>
-                              </uix:NExtractData>
-                              <Assign sap:VirtualizedContainerService.HintSize="546,115" sap2010:WorkflowViewState.IdRef="Assign_5">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:String">[resultPath]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String">C:\Users\maste\Documents\rpachallenge\results.xlsx</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                              <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="546,702" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
-                                <ueab:ExcelProcessScopeX.Body>
-                                  <ActivityAction x:TypeArguments="ui:IExcelProcess">
-                                    <ActivityAction.Argument>
-                                      <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
-                                    </ActivityAction.Argument>
-                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,583" sap2010:WorkflowViewState.IdRef="Sequence_21">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="450,495" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="[resultPath]">
-                                        <ueab:ExcelApplicationCard.Body>
-                                          <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
-                                            <ActivityAction.Argument>
-                                              <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
-                                            </ActivityAction.Argument>
-                                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,199" sap2010:WorkflowViewState.IdRef="Sequence_22">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <ui:ExcelAppendRange DataTable="[jobs]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="354,111" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_1" SheetName="Sheet" />
-                                            </Sequence>
-                                          </ActivityAction>
-                                        </ueab:ExcelApplicationCard.Body>
-                                      </ueab:ExcelApplicationCard>
-                                    </Sequence>
-                                  </ActivityAction>
-                                </ueab:ExcelProcessScopeX.Body>
-                              </ueab:ExcelProcessScopeX>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,177" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;click done&quot;]" />
-                              <umab:OutlookApplicationCard Account="philippe-ivan.mbarga@estiam.com" AccountMismatchBehavior="UseDefaultEmailAccount" DisplayName="Use Desktop Outlook App" sap:VirtualizedContainerService.HintSize="546,898.5" sap2010:WorkflowViewState.IdRef="OutlookApplicationCard_1">
-                                <umab:OutlookApplicationCard.Body>
-                                  <ActivityAction x:TypeArguments="um:IMailQuickHandle">
-                                    <ActivityAction.Argument>
-                                      <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Outlook" />
-                                    </ActivityAction.Argument>
-                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,686.5" sap2010:WorkflowViewState.IdRef="Sequence_16">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Builder" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;Hello toi !&#xA;&#xA;&lt;/SPAN&gt;&lt;SPAN&gt;J&amp;#39;ai fait un tour sur LinkedIn et trouv&amp;#233; des offres qui collent parfaitement &amp;#224; ta recherche. Alors, qu&amp;#39;est-ce que tu attends pour &lt;/SPAN&gt;&lt;SPAN&gt;foncer&lt;/SPAN&gt;&lt;SPAN&gt; &lt;/SPAN&gt;&lt;SPAN&gt;et postuler ? &amp;#128640;&lt;/SPAN&gt;&lt;SPAN&gt;&#xA;&#xA;L&lt;/SPAN&gt;&lt;SPAN&gt;inkforme&lt;/SPAN&gt;&lt;SPAN&gt;, &amp;#224; toi de jouer ! &amp;#128521;&lt;/SPAN&gt;&lt;/P&gt;&quot;)]" ConnectionId="12231724-16c5-464f-819c-48ba8a21c3c3" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="354,596.5" sap2010:WorkflowViewState.IdRef="SendMailConnections_3" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="Des pépites LinkedIn à ne pas manquer ! 😎💼 " To="[New String(){&quot;ntantukava99@gmail.com&quot;,&quot;philippe-ivan.mbarga@estiam.com&quot;,&quot;arthur.deumeni-tsako@estiam.com&quot;}]" UseConnectionService="True" UseSharedMailbox="False">
-                                        <umam:SendMailConnections.AttachmentList>
-                                          <scg:List x:TypeArguments="InArgument(upr:IResource)" Capacity="4">
-                                            <InArgument x:TypeArguments="upr:IResource">[LocalResource.FromPath("C:\\Users\\maste\\Documents\\rpachallenge\\results.xlsx")]</InArgument>
-                                          </scg:List>
-                                        </umam:SendMailConnections.AttachmentList>
-                                        <umam:SendMailConnections.AttachmentsBackup>
-                                          <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Builder">
-                                            <usau:BackupSlot.BackupValues>
-                                              <scg:List x:TypeArguments="x:Object" x:Key="Existing" Capacity="1">
-                                                <x:Null />
-                                              </scg:List>
-                                            </usau:BackupSlot.BackupValues>
-                                          </usau:BackupSlot>
-                                        </umam:SendMailConnections.AttachmentsBackup>
-                                        <umam:SendMailConnections.InputTypeBackup>
-                                          <usau:BackupSlot x:TypeArguments="umame:BodyInputType" StoredValue="HTML">
-                                            <usau:BackupSlot.BackupValues>
-                                              <scg:Dictionary x:TypeArguments="umame:BodyInputType, scg:List(x:Object)" />
-                                            </usau:BackupSlot.BackupValues>
-                                          </usau:BackupSlot>
-                                        </umam:SendMailConnections.InputTypeBackup>
-                                        <umam:SendMailConnections.MailboxBackup>
-                                          <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" StoredValue="NoMailbox">
-                                            <usau:BackupSlot.BackupValues>
-                                              <scg:List x:TypeArguments="x:Object" x:Key="NoMailbox" Capacity="1">
-                                                <x:Null />
-                                              </scg:List>
-                                              <scg:List x:TypeArguments="x:Object" x:Key="UseMailbox" Capacity="1">
-                                                <x:Null />
-                                              </scg:List>
-                                            </usau:BackupSlot.BackupValues>
-                                          </usau:BackupSlot>
-                                        </umam:SendMailConnections.MailboxBackup>
-                                      </umam:SendMailConnections>
-                                    </Sequence>
-                                  </ActivityAction>
-                                </umab:OutlookApplicationCard.Body>
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </umab:OutlookApplicationCard>
-                            </Sequence>
-                          </Sequence>
-                        </uix:NCheckState.IfExists>
-                        <uix:NCheckState.IfNotExists>
-                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="520,598" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="458,508" sap2010:WorkflowViewState.IdRef="RetryScope_1">
-                              <ui:RetryScope.ActivityBody>
-                                <ActivityAction>
-                                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,306" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            </uix:NClick>
+                            <uix:NCheckState DisplayName="Check App State 'Easy Apply'" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Version="V3">
+                              <uix:NCheckState.IfExists>
+                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="670,3262.5" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                  <Sequence.Variables>
+                                    <Variable x:TypeArguments="x:String" Name="strJob" />
+                                    <Variable x:TypeArguments="sd:DataTable" Name="dtJobList" />
+                                  </Sequence.Variables>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="608,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;filters apply&quot;]" />
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Experience level'" sap:VirtualizedContainerService.HintSize="608,227" sap2010:WorkflowViewState.IdRef="NClick_25" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Version="V3">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4039117240&amp;f_AL=true&amp;geoId=104246759&amp;keywords=Java%20Developer&amp;origin=JOB_SEARCH_PAGE_JOB_FILTER&amp;refresh=true" CVScreenId="3edfcf5d-eace-4840-8aa2-2aea5b44e701" CvElementArea="870, 251, 20, 22" CvTextArea="751, 254, 117, 19" CvTextArgument="Experience level" CvType="ArrowButton" DesignTimeRectangle="740, 246, 160, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='*Experience level*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' aaname='*Experience level*' type='button' class='artdeco-pill artdeco-pill--slate artdeco-pill--choice artdeco-pill--2 search-reusables__filter-pill-button&amp;#xA;       reusable-search-filter-trigger-and-dropdown__trigger' check:text='Experience level' /&gt;" Guid="30f22eed-48d8-4d2c-9f6f-f4e39f3daed2" InformativeScreenshot="dcb91497fbe734540ac8c4b4109fefcf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='* | LinkedIn' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                    </uix:NClick.Target>
+                                    <uix:NClick.VerifyOptions>
+                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                        <uix:VerifyExecutionOptions.Retry>
+                                          <InArgument x:TypeArguments="x:Boolean" />
+                                        </uix:VerifyExecutionOptions.Retry>
+                                        <uix:VerifyExecutionOptions.Timeout>
+                                          <InArgument x:TypeArguments="x:Double" />
+                                        </uix:VerifyExecutionOptions.Timeout>
+                                      </uix:VerifyExecutionOptions>
+                                    </uix:NClick.VerifyOptions>
+                                  </uix:NClick>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="608,2772.5" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                                    <Sequence.Variables>
+                                      <Variable x:TypeArguments="x:String" Name="jobT" />
+                                      <Variable x:TypeArguments="sd:DataTable" Name="jobs" />
+                                      <Variable x:TypeArguments="x:String" Name="resultPath" />
+                                    </Sequence.Variables>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Easy Apply'" sap:VirtualizedContainerService.HintSize="354,218" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Version="V3">
+                                    <Assign sap:VirtualizedContainerService.HintSize="546,115" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[jobT]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[currentQueueItem.SpecificContent("type de candidature").ToString]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click " sap:VirtualizedContainerService.HintSize="546,227" sap2010:WorkflowViewState.IdRef="NClick_26" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Version="V3">
                                       <uix:NClick.Target>
-                                        <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4044920895&amp;geoId=105015875&amp;keywords=dev&amp;origin=JOBS_HOME_SEARCH_BUTTON&amp;refresh=true" CVScreenId="734bb597-34fc-4947-8278-2529c931bddb" CvElementArea="1024, 192, 109, 36" CvTextArea="1038, 202, 80, 19" CvTextArgument="Easy Apply" CvType="Button" DesignTimeRectangle="1026, 194, 103, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='ember3141' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ember3141' tag='BUTTON' type='button' class='artdeco-pill artdeco-pill--slate artdeco-pill--2 artdeco-pill--choice ember-view search-reusables__filter-pill-button' aaname='           Easy Apply        ' check:innerText='Easy Apply' /&gt;" Guid="2d7d3fa2-995b-48e4-9753-2647865a1b44" InformativeScreenshot="dc3f121b8dffe3f05197a8a60c6afd2c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(2) dev Jobs | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                                        <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4047908569&amp;distance=25&amp;f_AL=true&amp;geoId=105015875&amp;keywords=dev&amp;origin=JOBS_HOME_KEYWORD_HISTORY&amp;refresh=true" CVScreenId="a3ddc8dd-f459-424b-a3e1-dcc8fc993b7b" CvTextArea="710, 311, 63, 16" CvTextArgument="Internship" CvType="Text" DesignTimeRectangle="711, 396, 58, 20" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl parentid='*' tag='SPAN' aaname='*{0}*' /&gt;&quot;, jobT)]" FuzzySelectorArgument="&lt;webctrl parentid='*' tag='SPAN' aaname='                   Associate                 ' type='' class='t-14 t-black--light t-normal' check:text='Associate' /&gt;" Guid="3d6779c8-d3d7-4e83-bbf6-80a44f1f02d5" InformativeScreenshot="8e085d05805e2a99875cb02e697779ad.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='* | LinkedIn' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                                       </uix:NClick.Target>
                                       <uix:NClick.VerifyOptions>
                                         <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
@@ -524,23 +364,223 @@
                                         </uix:VerifyExecutionOptions>
                                       </uix:NClick.VerifyOptions>
                                     </uix:NClick>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Show 26 results'" sap:VirtualizedContainerService.HintSize="546,227" sap2010:WorkflowViewState.IdRef="NClick_27" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4051012265&amp;f_AL=true&amp;geoId=104246759&amp;keywords=Java%20Developer&amp;origin=JOB_SEARCH_PAGE_JOB_FILTER&amp;refresh=true" CVScreenId="90010784-db4a-4d49-aad1-a3709f227149" CvElementArea="825, 577, 149, 36" CvTextArea="840, 587, 117, 15" CvTextArgument="Show 28 results" CvType="Button" DesignTimeRectangle="8, 181, 0, 0" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='*Show * results*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' aaname='*Show * results*' type='button' class='artdeco-button artdeco-button--2 artdeco-button--primary ember-view ml2' check:text='Show 28 results' /&gt;" Guid="d8fbc075-d3bf-4fdb-8df7-442aaf6f3c37" InformativeScreenshot="d5702ec38b24699ed42107a05658e477.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='* | LinkedIn' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                              <uix:Target CVScreenId="90010784-db4a-4d49-aad1-a3709f227149" CvElementArea="825, 577, 149, 36" CvTextArea="840, 587, 117, 15" CvTextArgument="Show 28 results" CvType="Button" DesignTimeRectangle="842, 585, 114, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='ember1161' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember1161' tag='SPAN' type='' class='artdeco-button__text' aaname='          Show 28 results                 ' check:innerText='Show 28 results' /&gt;" Guid="87e7be3b-c6fa-483f-8227-ef18d0824664" SearchSteps="FuzzySelector, CV" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NClick.Target>
+                                      <uix:NClick.VerifyOptions>
+                                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                          <uix:VerifyExecutionOptions.Retry>
+                                            <InArgument x:TypeArguments="x:Boolean" />
+                                          </uix:VerifyExecutionOptions.Retry>
+                                          <uix:VerifyExecutionOptions.Timeout>
+                                            <InArgument x:TypeArguments="x:Double" />
+                                          </uix:VerifyExecutionOptions.Timeout>
+                                        </uix:VerifyExecutionOptions>
+                                      </uix:NClick.VerifyOptions>
+                                    </uix:NClick>
+                                    <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[jobs]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Job title'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Job link'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Company'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='City'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column1' attr2='href'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='strong' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column3' attr='fulltext'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="546,190" sap2010:WorkflowViewState.IdRef="NExtractData_6" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Version="V3">
+                                      <uix:NExtractData.NextLink>
+                                        <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4032639501&amp;f_AL=true&amp;f_E=3&amp;geoId=104246759&amp;keywords=RPA%20Developer&amp;origin=JOB_SEARCH_PAGE_JOB_FILTER&amp;refresh=true" CVScreenId="66303376-0673-47d3-b1a3-1eafaf8f21fa" CvElementArea="686, 860, 18, 22" CvTextArea="652, 864, 32, 13" CvTextArgument="Next" CvType="ArrowButton" DesignTimeRectangle="644, 855, 65, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='ember8114' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ember8114' tag='BUTTON' type='button' class='artdeco-button artdeco-button--muted artdeco-button--icon-right artdeco-button--1 artdeco-button--tertiary ember-view jobs-search-pagination__button jobs-search-pagination__button--next' aaname='                           Next ' check:innerText='Next' /&gt;" Guid="c6d60b19-19c5-4ff1-95b7-dba8d7057255" ScopeSelectorArgument="&lt;html app='chrome.exe' title='RPA Developer Jobs | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                              <uix:Target CVScreenId="66303376-0673-47d3-b1a3-1eafaf8f21fa" CvTextArea="652, 864, 32, 13" CvTextArgument="Next" CvType="Text" DesignTimeRectangle="652, 861, 31, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='ember8114' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember8114' tag='SPAN' type='' class='artdeco-button__text' aaname='     Next ' check:innerText='Next' /&gt;" Guid="8dd5a674-b20f-4335-bf69-853ad07dc40e" SearchSteps="FuzzySelector, CV" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NExtractData.NextLink>
+                                      <uix:NExtractData.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4032639501&amp;f_AL=true&amp;f_E=3&amp;geoId=104246759&amp;keywords=RPA%20Developer&amp;origin=JOB_SEARCH_PAGE_JOB_FILTER&amp;refresh=true" DesignTimeRectangle="396, 355, 486, 3792" DesignTimeScaleFactor="1" ElementType="List" FullSelectorArgument="&lt;webctrl parentid='main' tag='UL' /&gt;" Guid="d7f5371d-4ef6-4b57-b546-0971354eafdd" InformativeScreenshot="8668c440962bcbd0b58be99e60242473.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='RPA Developer Jobs | LinkedIn' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                      </uix:NExtractData.Target>
+                                    </uix:NExtractData>
+                                    <Assign sap:VirtualizedContainerService.HintSize="546,115" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[resultPath]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">C:\Users\maste\Documents\rpachallenge\results1.xlsx</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="546,702" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_5">
+                                      <ueab:ExcelProcessScopeX.Body>
+                                        <ActivityAction x:TypeArguments="ui:IExcelProcess">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,583" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="450,495" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_5" ResizeWindow="None" WorkbookPath="[resultPath]">
+                                              <ueab:ExcelApplicationCard.Body>
+                                                <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                                                  <ActivityAction.Argument>
+                                                    <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                                                  </ActivityAction.Argument>
+                                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,199" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:ExcelAppendRange DataTable="[jobs]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="354,111" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_4" SheetName="Sheet" />
+                                                  </Sequence>
+                                                </ActivityAction>
+                                              </ueab:ExcelApplicationCard.Body>
+                                            </ueab:ExcelApplicationCard>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </ueab:ExcelProcessScopeX.Body>
+                                    </ueab:ExcelProcessScopeX>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,175" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;click done&quot;]" />
+                                    <umab:OutlookApplicationCard Account="philippe-ivan.mbarga@estiam.com" AccountMismatchBehavior="UseDefaultEmailAccount" DisplayName="Use Desktop Outlook App" sap:VirtualizedContainerService.HintSize="546,910.5" sap2010:WorkflowViewState.IdRef="OutlookApplicationCard_4">
+                                      <umab:OutlookApplicationCard.Body>
+                                        <ActivityAction x:TypeArguments="um:IMailQuickHandle">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Outlook" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,703.5" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Builder" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;J&amp;#39;esp&amp;#232;re que tu vas bien ! &amp;#128522;&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;En faisant un tour sur LinkedIn, je suis tomb&amp;#233;(e) sur plusieurs offres d&amp;#39;emploi qui semblent parfaitement&#xA;            correspondre &amp;#224; ta recherche et &amp;#224; ton profil. C&amp;#39;est exactement ce que tu cherchais, non ? &lt;/SPAN&gt;&lt;SPAN&gt;&amp;#128064;&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Je te mets en pi&amp;#232;ce jointes les liens pour que tu puisses y jeter un coup d&amp;#39;œil :&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Qu&amp;#39;est-ce que tu attends pour foncer et postuler ? &lt;/SPAN&gt;&lt;SPAN&gt;&amp;#128640;&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Je suis s&amp;#251;r(e) que tu as toutes les cartes en main pour te d&amp;#233;marquer ! &lt;/SPAN&gt;&lt;SPAN&gt;&amp;#128521;&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Si tu as besoin d&amp;#39;un coup de pouce pour ta candidature ou de conseils, n&amp;#39;h&amp;#233;site surtout pas, je suis l&amp;#224; pour&#xA;            t&amp;#39;aider. &amp;#128077;&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Bonne chance et tiens-moi au courant !&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;&amp;#192; tr&amp;#232;s vite,&lt;/SPAN&gt;&lt;BR/&gt;&lt;/P&gt;&quot;)]" ConnectionId="cb753783-1eda-4606-b3e9-2e4163f068c7" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="354,615.5" sap2010:WorkflowViewState.IdRef="SendMailConnections_6" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="Des pépites LinkedIn à ne pas manquer ! 😎💼 " To="[New String(){&quot;philippe-ivan.mbarga@estiam.com&quot;,&quot;imrane.lawani@estiam.com&quot;,&quot;japhet.ntantu@estiam.com&quot;,&quot;franck-vaneck.ndandji-tchetnga@estiam.com&quot;}]" UseConnectionService="True" UseSharedMailbox="False">
+                                              <umam:SendMailConnections.AttachmentList>
+                                                <scg:List x:TypeArguments="InArgument(upr:IResource)" Capacity="4">
+                                                  <InArgument x:TypeArguments="upr:IResource">[LocalResource.FromPath("C:\\Users\\maste\\Documents\\rpachallenge\\results.xlsx")]</InArgument>
+                                                </scg:List>
+                                              </umam:SendMailConnections.AttachmentList>
+                                              <umam:SendMailConnections.AttachmentsBackup>
+                                                <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Builder">
+                                                  <usau:BackupSlot.BackupValues>
+                                                    <scg:List x:TypeArguments="x:Object" x:Key="Existing" Capacity="1">
+                                                      <x:Null />
+                                                    </scg:List>
+                                                  </usau:BackupSlot.BackupValues>
+                                                </usau:BackupSlot>
+                                              </umam:SendMailConnections.AttachmentsBackup>
+                                              <umam:SendMailConnections.InputTypeBackup>
+                                                <usau:BackupSlot x:TypeArguments="umame:BodyInputType" StoredValue="HTML">
+                                                  <usau:BackupSlot.BackupValues>
+                                                    <scg:Dictionary x:TypeArguments="umame:BodyInputType, scg:List(x:Object)" />
+                                                  </usau:BackupSlot.BackupValues>
+                                                </usau:BackupSlot>
+                                              </umam:SendMailConnections.InputTypeBackup>
+                                              <umam:SendMailConnections.MailboxBackup>
+                                                <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" StoredValue="NoMailbox">
+                                                  <usau:BackupSlot.BackupValues>
+                                                    <scg:List x:TypeArguments="x:Object" x:Key="NoMailbox" Capacity="1">
+                                                      <x:Null />
+                                                    </scg:List>
+                                                    <scg:List x:TypeArguments="x:Object" x:Key="UseMailbox" Capacity="1">
+                                                      <x:Null />
+                                                    </scg:List>
+                                                  </usau:BackupSlot.BackupValues>
+                                                </usau:BackupSlot>
+                                              </umam:SendMailConnections.MailboxBackup>
+                                            </umam:SendMailConnections>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </umab:OutlookApplicationCard.Body>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </umab:OutlookApplicationCard>
                                   </Sequence>
-                                </ActivityAction>
-                              </ui:RetryScope.ActivityBody>
-                              <ui:RetryScope.Condition>
-                                <ActivityFunc x:TypeArguments="x:Boolean" />
-                              </ui:RetryScope.Condition>
-                            </ui:RetryScope>
+                                </Sequence>
+                              </uix:NCheckState.IfExists>
+                              <uix:NCheckState.IfNotExists>
+                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="520,598" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="458,508" sap2010:WorkflowViewState.IdRef="RetryScope_4">
+                                    <ui:RetryScope.ActivityBody>
+                                      <ActivityAction>
+                                        <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,306" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Easy Apply'" sap:VirtualizedContainerService.HintSize="354,218" sap2010:WorkflowViewState.IdRef="NClick_28" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7f27cbcb-0fce-4902-8813-ed4296347553" Version="V3">
+                                            <uix:NClick.Target>
+                                              <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4044920895&amp;geoId=105015875&amp;keywords=dev&amp;origin=JOBS_HOME_SEARCH_BUTTON&amp;refresh=true" CVScreenId="734bb597-34fc-4947-8278-2529c931bddb" CvElementArea="1024, 192, 109, 36" CvTextArea="1038, 202, 80, 19" CvTextArgument="Easy Apply" CvType="Button" DesignTimeRectangle="1026, 194, 103, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='ember3141' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ember3141' tag='BUTTON' type='button' class='artdeco-pill artdeco-pill--slate artdeco-pill--2 artdeco-pill--choice ember-view search-reusables__filter-pill-button' aaname='           Easy Apply        ' check:innerText='Easy Apply' /&gt;" Guid="2d7d3fa2-995b-48e4-9753-2647865a1b44" InformativeScreenshot="dc3f121b8dffe3f05197a8a60c6afd2c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(2) dev Jobs | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                                            </uix:NClick.Target>
+                                            <uix:NClick.VerifyOptions>
+                                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                <uix:VerifyExecutionOptions.Retry>
+                                                  <InArgument x:TypeArguments="x:Boolean" />
+                                                </uix:VerifyExecutionOptions.Retry>
+                                                <uix:VerifyExecutionOptions.Timeout>
+                                                  <InArgument x:TypeArguments="x:Double" />
+                                                </uix:VerifyExecutionOptions.Timeout>
+                                              </uix:VerifyExecutionOptions>
+                                            </uix:NClick.VerifyOptions>
+                                          </uix:NClick>
+                                        </Sequence>
+                                      </ActivityAction>
+                                    </ui:RetryScope.ActivityBody>
+                                    <ui:RetryScope.Condition>
+                                      <ActivityFunc x:TypeArguments="x:Boolean" />
+                                    </ui:RetryScope.Condition>
+                                  </ui:RetryScope>
+                                </Sequence>
+                              </uix:NCheckState.IfNotExists>
+                              <uix:NCheckState.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4044920895&amp;f_AL=true&amp;geoId=105015875&amp;keywords=dev&amp;origin=JOB_SEARCH_PAGE_JOB_FILTER&amp;refresh=true" CVScreenId="67676986-f995-4200-a945-ae6402b57b8c" CvElementArea="485, 191, 108, 38" CvTextArea="500, 202, 81, 19" CvTextArgument="Easy Apply" CvType="Button" DesignTimeRectangle="489, 194, 102, 32" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl class='search-reusables__filter-binary-toggle' parentid='search-reusables__filters-bar' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='search-reusables__filter-binary-toggle' parentid='search-reusables__filters-bar' tag='DIV' type='' aaname='            ' check:innerText='Easy Apply' /&gt;" Guid="5382ffed-5985-489c-9169-32bb24852684" InformativeScreenshot="6193da6a692ae1ec7903af7208344e13.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(2) dev Jobs | LinkedIn' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                              </uix:NCheckState.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NCheckState>
                           </Sequence>
-                        </uix:NCheckState.IfNotExists>
-                        <uix:NCheckState.Target>
-                          <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4044920895&amp;f_AL=true&amp;geoId=105015875&amp;keywords=dev&amp;origin=JOB_SEARCH_PAGE_JOB_FILTER&amp;refresh=true" CVScreenId="67676986-f995-4200-a945-ae6402b57b8c" CvElementArea="485, 191, 108, 38" CvTextArea="500, 202, 81, 19" CvTextArgument="Easy Apply" CvType="Button" DesignTimeRectangle="489, 194, 102, 32" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl class='search-reusables__filter-binary-toggle' parentid='search-reusables__filters-bar' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='search-reusables__filter-binary-toggle' parentid='search-reusables__filters-bar' tag='DIV' type='' aaname='            ' check:innerText='Easy Apply' /&gt;" Guid="5382ffed-5985-489c-9169-32bb24852684" InformativeScreenshot="6193da6a692ae1ec7903af7208344e13.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(2) dev Jobs | LinkedIn' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
-                        </uix:NCheckState.Target>
-                      </uix:NCheckState>
+                        </TryCatch.Try>
+                        <TryCatch.Catches>
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="420,320" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ActivityAction x:TypeArguments="s:Exception">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                              </ActivityAction.Argument>
+                              <ui:SetTransactionStatus ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Set Transaction Status" ErrorType="Business" FolderPath="Shared/LINKFORME_ROBOT" sap:VirtualizedContainerService.HintSize="334,249" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_3" Reason="[exception.Message]" Status="Failed" TransactionItem="[currentQueueItem]">
+                                <ui:SetTransactionStatus.Analytics>
+                                  <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                </ui:SetTransactionStatus.Analytics>
+                                <ui:SetTransactionStatus.Output>
+                                  <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                </ui:SetTransactionStatus.Output>
+                              </ui:SetTransactionStatus>
+                            </ActivityAction>
+                          </Catch>
+                        </TryCatch.Catches>
+                      </TryCatch>
                     </Sequence>
                   </ActivityAction>
-                </ui:ForEachRow.Body>
-              </ui:ForEachRow>
+                </ui:ForEach.Body>
+              </ui:ForEach>
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>

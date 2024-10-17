@@ -1,0 +1,127 @@
+# Lumoa Project
+
+This is a Django project generated with Cookiecutter-Django. Follow these steps to get your project up and running either locally or using Docker.
+
+## Local Setup
+
+### Prerequisites
+
+- Python 3.12
+- pip
+- virtualenv (recommended)
+- PostgreSQL
+
+### Installation
+
+1. **Clone the repository**:
+
+    ```sh
+    git clone https://github.com/divad437/lumoa.git
+    cd lumoa
+    ```
+
+2. **Create and activate a virtual environment**:
+
+    ```sh
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+3. **Install dependencies**:
+
+    ```sh
+    pip install -r requirements/local.txt
+    ```
+
+4. **Set up the pre-commit**:
+
+    ```sh
+    pre-commit install
+    ```
+
+5. **Create a new PostgreSQL database**
+
+    In linux use createdb
+
+     ```sh
+    createdb --username=postgres <project_slug>
+    ```
+
+    In windows use what you want.
+
+
+6. **Set the environment variables for your database(s)**
+
+    In linux
+
+    ```sh
+    export DATABASE_URL=postgres://postgres:<password>@127.0.0.1:5432/<DB name given to createdb>
+    ```
+
+5. **Apply migrations**:
+
+    ```sh
+    python manage.py migrate
+    ```
+
+6. **Create a superuser**:
+
+    ```sh
+    python manage.py createsuperuser
+    ```
+
+7. **Run the development server**:
+
+    ```sh
+    python manage.py runserver
+    ```
+
+You can now access the project at `http://127.0.0.1:8000/`.
+
+## Docker Setup
+
+### Prerequisites
+
+- Docker
+- Docker Compose
+
+### Installation
+
+1. **Clone the repository**:
+
+    ```sh
+   git clone https://github.com/divad437/lumoa.git
+    cd lumoa
+    ```
+
+2. **Build and start the containers**:
+
+    ```sh
+    docker compose -f docker-compose.local.yml build
+    docker-compose -f docker-compose.local.yml up
+    ```
+
+3. **Apply migrations**:
+
+    In another terminal window, run:
+
+    ```sh
+    docker-compose -f docker-compose.local.yml run --rm django python manage.py migrate
+    ```
+
+4. **Create a superuser**:
+
+    ```sh
+    docker-compose -f docker-compose.local.yml run --rm django python manage.py createsuperuser
+    ```
+
+You can now access the project at `http://127.0.0.1:8000/`.
+
+## Running Tests
+
+### Locally
+
+To run the tests locally, use:
+
+```sh
+pytest
